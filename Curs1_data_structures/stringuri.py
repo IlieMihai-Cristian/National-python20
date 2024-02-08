@@ -96,4 +96,6 @@ string_5 = ['Ana', ' are mere', ' are pere', ' si', ' are struguri!']
 string_6 = '      Ana are      '
 # print(string_6.lstrip())
 # print(string_6.rstrip())
-print(string_6.strip())
+# print(string_6.strip())
+
+

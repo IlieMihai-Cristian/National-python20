@@ -59,3 +59,8 @@ var_5 = 'George'
 # print('E' in var_5)
 
 # seturi_de_date = liste, tuplurile, seturile, dictionarele
+
+
+x = input("Introduceti un nr: ")
+z = len(x)
+print(z)
