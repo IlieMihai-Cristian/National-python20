@@ -2,6 +2,7 @@
 
 # var = str()
 
+
 """concatenare"""
 
 # var_1 = 'pro'
