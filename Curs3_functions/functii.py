@@ -195,5 +195,8 @@
 # val = test_func(3)
 # print(val)
 
+def calc(x):
+    return x * x
+
 
 variabila = 'AAA'
