@@ -1,0 +1,2 @@
+Astazi este luni
+Cursul de Python
