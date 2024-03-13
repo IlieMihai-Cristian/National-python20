@@ -45,4 +45,3 @@ while attempts > 0:
     elif not '_' in display_word:
         print(f'Felicitari! Ati castigat! Cuvantul gasit este: "{display_word}" ')
         break
-

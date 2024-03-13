@@ -127,10 +127,28 @@ var = 'comprehension'
 
 """ COMPREHENSION DICTIONARY """
 
-square_dict = dict()
-for num in range(1, 11):
-    square_dict[num] = num * num
-print(square_dict)
+# square_dict = dict()
+# for num in range(1, 11):
+#     square_dict[num] = num * num
+# print(square_dict)
+#
+# square_comprehension = {num: num * num for num in range(1, 11)}
+# print(square_comprehension)
 
-square_comprehension = {num: num * num for num in range(1, 11)}
-print(square_comprehension)
+# print(isinstance(40, float))
+# print(issubclass((40, 12), tuple))
+
+
+a = [41, 45]
+b = [1, 41]
+c = [41, 45]
+
+# print(any(i in a for i in b))
+# print(all(i in a for i in c))
+
+# value = eval('2 + 2')
+# print(value)
+
+value_2 = eval('{1: 2}')
+print(value_2)
+print(type(value_2))

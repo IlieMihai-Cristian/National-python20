@@ -1,0 +1,16 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#id_footer3 {
+    color: darkblue;
+}
+
+.class_me2 {
+    color: green;
+}
+
+td:nth-child(2) {
+    background-color: aqua;
+}
