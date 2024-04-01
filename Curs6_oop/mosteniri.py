@@ -121,13 +121,13 @@ ob2 = Example(0)
 ob3 = ob1
 ob3.val += 1
 
-print(ob1 is ob2)
-print(ob1 is ob3)
-print(ob2 is ob3)
-print(ob1.val, ob2.val, ob3.val)  # 0, 2, 1  (0, 2, 0), (1, 2, 1)
-print(id(ob1.val))
-print(id(ob2.val))
-print(id(ob3.val))
+# print(ob1 is ob2)
+# print(ob1 is ob3)
+# print(ob2 is ob3)
+# print(ob1.val, ob2.val, ob3.val)  # 0, 2, 1  (0, 2, 0), (1, 2, 1)
+# print(id(ob1.val))
+# print(id(ob2.val))
+# print(id(ob3.val))
 
 
 # a = 10
@@ -141,3 +141,123 @@ print(id(ob3.val))
 # cc = (1, 2, 3)
 #
 # print(aa is cc)
+
+
+""" MOSTENIRI """
+
+
+class Vehicule:
+    pass
+
+
+class Masini(Vehicule):
+    pass
+
+
+class MasiniDeTeren(Masini):
+    pass
+
+
+# print(issubclass(MasiniDeTeren, Vehicule))
+# print(issubclass(Vehicule, MasiniDeTeren))
+
+vehicul_1 = Vehicule()
+masina_1 = Masini()
+masina_de_teren_1 = MasiniDeTeren()
+
+# print(isinstance(masina_1, MasiniDeTeren))
+# print(isinstance(masina_1, Masini))
+# print(isinstance(masina_1, Vehicule))
+
+
+""" Rescriere metode """
+
+
+# class SuperClasa:
+#     def __init__(self, name='Ion'):
+#         self.name = name
+#
+#     def __str__(self):
+#         return f' Numele meu este {self.name}'
+#
+#
+# class SubClasa(SuperClasa):
+#     # def __init__(self, name):
+#     #     self.name = name
+#     # super(SuperClasa, self).__init__(name):
+#     #     super().__init__(name)
+#
+#     def __init__(self, name='George'):
+#         super().__init__(name)
+#
+#     def __str__(self):
+#         return f' Print {self.name}'
+#
+#
+# object_1 = SubClasa('Vasile')
+# print(object_1)
+
+
+
+# class SuperClasa:
+#
+#     super_variabila = 'super'
+#
+#     def __init__(self, name='Ion'):
+#         self.name = name
+#
+#     def __str__(self):
+#         return f' Numele meu este {self.name}'
+
+
+# class SubClasa(SuperClasa):
+#
+#     sub_variabila = 'sub'
+#
+#     def __init__(self, name='George'):
+#         super().__init__(name)
+#
+#     def __str__(self):
+#         return f' Print {self.name}'
+
+
+# object_1 = SubClasa()
+# # print(object_1.sub_variabila)
+# print(object_1.super_variabila)
+
+
+
+class SuperClasa:
+
+    super_variabila = 'super'
+    sub_variabila = 'sub_parinte'
+
+    def __init__(self, name='Ion', var=55):
+        self.name = name
+        self.var_init = 30
+
+    def __str__(self):
+        return f' Numele meu este {self.name}'
+
+
+class Mijloc:
+    variabila_mijloc = 3
+    super_variabila = 'mijloc'
+
+
+class SubClasa(Mijloc, SuperClasa):
+
+    sub_variabila = 'sub'
+    super_variabila = 'super_copil'
+
+    def __init__(self, profesor='George', var=22):
+        super().__init__(profesor, var)
+        # self.var_init = 12
+
+    def __str__(self):
+        return f'Print {self.name}'
+
+
+object_1 = SubClasa()
+print(object_1)
+
