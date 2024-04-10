@@ -12,7 +12,8 @@ class Calculator:
             input_de_la_tst = input('Introduceti corect numarul: ')
         return float(input_de_la_tst)
 
-    def validate_sign(self, semn):
+    @staticmethod
+    def validate_sign(semn):
         while semn not in ['+', '-', '*', '/']:
             semn = input("Semnul nu e corect! Alege unul din ['+', '-', '*', '/']")
         return semn
