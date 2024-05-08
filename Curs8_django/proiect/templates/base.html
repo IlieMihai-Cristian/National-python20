@@ -7,8 +7,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    <br>
                     <nav>
-                        <a class="btn btn-sm btn-info" href="/admin">Admin</a>
+                        <div style="display: flex; align-content: center">
+                            {% if request.user.is_authenticated %}
+                                <span style="color:blue;"> Hi, {{ request.user.username|upper }}!</span>
+                            {% endif %}
+                            <a class="btn btn-sm btn-info" style="margin-left: 10px" href="/admin">Admin</a>
+                            {% if request.user.is_authenticated %}
+                                <a class="btn btn-sm btn-primary" style="margin-left: 10px" 
+                                   href="{% url 'locations:lista_locatii' %}">Locations</a>
+                                <form action="{% url 'logout' %}" method="post">
+                                    {% csrf_token %}
+                                    <button class="btn btn-sm btn-danger" style="margin-left: 10px" type="submit">Logout</button>
+                                </form>
+                                {% if ready_to_work %}
+                                    <a class="btn btn-sm btn-success" style="margin-left: 10px" href="{% url 'locations:start_pontaj' %}">Pornire Pontaj</a>
+                                {% else %}
+                                    <a class="btn btn-sm btn-danger" style="margin-left: 10px" href="{% url 'locations:stop_pontaj' %}">Oprire Pontaj</a>
+                                {% endif %}
+                            {% endif %}
+                        </div>
                     </nav>
                 </div>
             </div>
@@ -16,4 +35,7 @@
     {% block title %}
     {% endblock %}
     </body>
+    <footer>
+        <p class="copyright pull-left" style="margin-top: 400px">© {% now 'Y' %} Scoala Informala de IT</p>
+    </footer>
 </html>
