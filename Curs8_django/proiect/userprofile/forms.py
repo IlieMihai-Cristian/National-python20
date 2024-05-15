@@ -18,7 +18,6 @@ class NewAccountForm(forms.ModelForm):  #forms.Form
 
     def clean(self):
         cleaned_data = self.cleaned_data
-        print(cleaned_data, 'AAAA')
         email_data = cleaned_data.get('email')
         if User.objects.filter(email=email_data).exists():
             msg = 'Emailul deja exista!'

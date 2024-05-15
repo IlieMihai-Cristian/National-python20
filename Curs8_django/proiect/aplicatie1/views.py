@@ -20,7 +20,7 @@ from django.shortcuts import redirect
 class LocationsView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
     model = Location
     template_name = 'aplicatie1/locations_index.html'
-    permission_required = 'locations.view_location'
+    permission_required = 'aplicatie1.view_location'
 
     # def get_context_data(self, *, object_list=None, **kwargs):
     #     data = super(LocationsView, self).get_context_data(**kwargs)
